@@ -1,18 +1,23 @@
-Nose django helper plugin
-=========================
+=========================================
+Nose Simple and Fast Django helper plugin
+=========================================
 
-nosetests -v --with-django --with-doctest --doctest-tests 
+::
 
-This is a rewrite of Jason Pellerin's original nose-django plugin.
+  $ nosetests --with-sfd
 
-This plugin will work with Django trunk (0.97-pre SVN revision 6669)
+This is an update of the NoseDjango v0.6 which is incredibly fast than the
+new releases. This plugin will work with all the versions of Django.
+
+The aim of this fork is to keep the speed of the tests execution time.
 
 Features:
 
-    * automatic settings.py detection in current or parent directory
-    * fixture support
-    * database setup/teardown
+* Automatic settings.py detection
+* Fixture support
+* Database setup/teardown
 
-Contact: 
-    Victor Ng <crankycoder@gmail.com>
- 
+Original authors:
+
+* Victor Ng <crankycoder@gmail.com>
+* Jason Pellerin
