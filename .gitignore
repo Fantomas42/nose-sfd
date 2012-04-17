@@ -4,3 +4,4 @@ bin
 lib
 dist
 include
+nose_sfd.egg-info
