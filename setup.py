@@ -31,7 +31,7 @@ setup(
     install_requires='nose>=0.10',
     entry_points={
         'nose.plugins': [
-            'django = sfd.sfd:SimpleFastDjango',
+            'sfd = sfd.sfd:SimpleFastDjango',
             ]
         }
     )
