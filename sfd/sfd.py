@@ -33,6 +33,12 @@ class SimpleFastDjango(Plugin):
         setup_test_environment()
         connection.creation.create_test_db(self.verbosity)
 
+        if 'south' in settings.INSTALLED_APPS:
+            from south import migration
+
+            for app in migration.all_migrations():
+                migration.migrate_app(app, verbosity=self.verbosity)
+
     def finalize(self, result):
         """
         Teardown the test environment and destroy the test database.
