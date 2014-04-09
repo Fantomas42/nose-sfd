@@ -32,6 +32,6 @@ setup(
     entry_points={
         'nose.plugins': [
             'sfd = sfd.sfd:SimpleFastDjango',
-            ]
-        }
-    )
+        ]
+    }
+)

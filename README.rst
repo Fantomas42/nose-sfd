@@ -16,3 +16,17 @@ Original authors:
 
 * Victor Ng <crankycoder@gmail.com>
 * Jason Pellerin
+
+
+CHANGELOG
+=========
+
+v0.2
+----
+
+- Add support for South migrations.
+
+v0.1
+----
+
+- Initial release.
