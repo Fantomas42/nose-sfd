@@ -21,6 +21,11 @@ Original authors:
 CHANGELOG
 =========
 
+v0.3
+----
+
+- Fix support for South migrations on Postgres.
+
 v0.2
 ----
 
