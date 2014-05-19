@@ -31,6 +31,12 @@ class SimpleFastDjango(Plugin):
             self.original_db_name = settings.DATABASES['default']['NAME']
 
         setup_test_environment()
+        from south.hacks import hacks
+        from django.core import management
+        management.get_commands()
+        hacks.patch_flush_during_test_db_creation()
+
+
         connection.creation.create_test_db(self.verbosity)
 
         if 'south' in settings.INSTALLED_APPS:
