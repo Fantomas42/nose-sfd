@@ -23,7 +23,13 @@ class SimpleFastDjango(Plugin):
         """
         from django.conf import settings
         from django.db import connection
+        from django.core import management
         from django.test.utils import setup_test_environment
+
+        use_south = 'south' in settings.INSTALLED_APPS
+        if use_south:
+            from south import migration
+            from south.hacks import hacks
 
         try:
             self.original_db_name = settings.DATABASE_NAME
@@ -31,11 +37,14 @@ class SimpleFastDjango(Plugin):
             self.original_db_name = settings.DATABASES['default']['NAME']
 
         setup_test_environment()
+
+        if use_south:
+            management.get_commands()
+            hacks.patch_flush_during_test_db_creation()
+
         connection.creation.create_test_db(self.verbosity)
 
-        if 'south' in settings.INSTALLED_APPS:
-            from south import migration
-
+        if use_south:
             for app in migration.all_migrations():
                 migration.migrate_app(app, verbosity=self.verbosity)
 
