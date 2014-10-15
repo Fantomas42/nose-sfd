@@ -1,5 +1,5 @@
 """Nose Simple and Fast Django module"""
-__version__ = '0.3'
+__version__ = '0.4'
 __license__ = 'GNU LGPL'
 
 __author__ = 'Fantomas42'

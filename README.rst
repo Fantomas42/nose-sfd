@@ -21,6 +21,11 @@ Original authors:
 CHANGELOG
 =========
 
+v0.4
+----
+
+- Support for Django 1.7
+
 v0.3
 ----
 
