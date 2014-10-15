@@ -21,6 +21,7 @@ class SimpleFastDjango(Plugin):
         Initialize the test environment then create the test database
         and switch the connection over to that database.
         """
+        import django
         from django.conf import settings
         from django.db import connection
         from django.core import management
@@ -36,6 +37,10 @@ class SimpleFastDjango(Plugin):
         except AttributeError:  # Django > 1.2
             self.original_db_name = settings.DATABASES['default']['NAME']
 
+        try:
+            django.setup()  # Django >= 1.7
+        except AttributeError:
+            pass
         setup_test_environment()
 
         if use_south:

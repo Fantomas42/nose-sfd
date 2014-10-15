@@ -21,6 +21,16 @@ Original authors:
 CHANGELOG
 =========
 
+v0.4
+----
+
+- Support for Django 1.7
+
+v0.3
+----
+
+- Fix support for South migrations on Postgres.
+
 v0.2
 ----
 
